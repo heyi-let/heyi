@@ -1,0 +1,36 @@
+---
+title: heyi
+---
+
+<style> 
+ul,li{ padding:0; margin:0;list-style:none} 
+
+nav{border:1px solid #000; width:210px; overflow:hidden} 
+nav li{ line-height:22px;  padding:5px;} 
+nav li a:hover{ color:#F00} 
+/* 对class=nav设置黑色边框，鼠标滑过超链接文字为红色 */ 
+
+
+</style> 
+
+<nav>
+	导航：
+	<ul> 
+		<li><a href="{{ site.baseurl }}">首页</a></li> 
+		<li><a href="{{ site.baseurl }}/about/">Blog</a></li> 
+		<li><a href="{{ site.baseurl }}/contact/">关于我</a></li> 
+	</ul> 
+</nav>
+
+
+<p>最新文章</p>
+
+<ul>
+
+	{% for post in site.posts %}
+
+		<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+
+	{% endfor %}
+
+</ul>
