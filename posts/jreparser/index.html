@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
         
-            关于我 | 咀嚼之味
+            一款在线JavaScript正则表达式测试器 | 咀嚼之味
         </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content=" 咀嚼之味是我分享我对编程与生活的见解之地。在我看来，编程不仅仅是我与生俱来的使命，也是我快乐的源泉。在业余时间，我喜欢研究一些跟技术相关的东西。同时，我也喜欢做一些安静的事，比如看书、看电影、听音乐、一个人散步以及旅行。
- ">
+    <meta name="description" content="昨天在看《正则表达式30分钟入门教程》的时候，看到博主自己实现了一个C#写的正则测试器，看上去挺方便的样子。但是我自己又不太喜欢乱装东西，所以寻思着能不能自己实现一个javascript正则表达式测试器。于是几十行代码实现了这样一个正则测试器。 ">
     <link rel="alternate" type="application/rss+xml" title="咀嚼之味 RSS" href="/feed.xml">
-    <link rel="canonical" href="https://jerryzou.com/about/">
+    <link rel="canonical" href="https://jerryzou.com/posts/jreparser/">
     <link href="/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Custom CSS -->
@@ -104,34 +103,49 @@
         <div class="post">
 
   <header class="post-header">
-    <h1>关于我</h1>
+    <h1>一款在线JavaScript正则表达式测试器</h1>
+    <p class="meta">May 5, 2014 <span class="pause"> - </span>
+        浏览量：<span data-hk-page="current"> - </span>次<span class="pause"> | </span>
+        
+            
+                <a class="label" href="/all-articles/?label=JavaScript">JavaScript</a>
+            
+                <a class="label" href="/all-articles/?label=正则表达式">正则表达式</a>
+            
+        
+    </p>
   </header>
 
   <article class="post-content">
-  <p><img class="monkey-avatar" src="https://jerryblog-image.b0.upaiyun.com/blog/monkey.jpg" /></p>
+  <p>昨天在看《<a href="https://deerchao.net/tutorials/regex/regex.htm">正则表达式30分钟入门教程</a>》的时候，看到博主自己实现了一个C#写的正则测试器，看上去挺方便的样子。但是我自己又不太喜欢乱装东西，所以寻思着能不能自己实现一个JavaScript正则表达式测试器。于是几十行代码实现了这样一个正则测试器。</p>
 
-<p>你们好，我是邹润阳，是一名生活在上海的程序员，同时梦想成为一名独立游戏开发者。</p>
+<p>先展示一下0.1版本的效果图吧~</p>
 
-<p>我曾经在 <strong>Microsoft GBS、<a href="//dianying.taobao.com">淘票票</a> 和 <a href="//leetcode.com">LeetCode</a></strong> 担任前端实习生，毕业后有幸加入了 <strong><a href="//www.teambition.com">Teambition</a></strong>，全职开发 <a href="//thoughts.teambition.com">Thoughts</a>。目前我在 <strong><a href="//leetcode-cn.com">力扣</a></strong> 担任高级打杂工程师，欢迎任何能力出众的小伙伴<a href="//www.v2ex.com/t/491597">加入我们</a>。</p>
+<p><img src="https://jerryblog-image.b0.upaiyun.com/blog/jre-parser.png" alt="JRE Parser v0.1" /></p>
 
-<p>在我看来，编程不仅仅是我与生俱来的使命，也是我快乐的源泉。在业余时间，我喜欢研究一些跟技术相关的东西。同时，我也喜欢做一些安静的事，比如看书、看电影，或者独自散步。</p>
+<p>页面还比较简单，但是基本功能算是有了。可以正常使用~。</p>
 
-<p>如果你有任何问题，请给我发送邮件：<a href="mailto:jerry.zry@outlook.com">jerry.zry@outlook.com</a></p>
+<p>关于怎么从用户的输入中提取正则表达式的过程多亏segmentfault的依云提点（<a href="https://segmentfault.com/q/1010000000494735">传送门</a>），有了如下的解决办法：</p>
 
-<h2 id="我在别处">我在别处</h2>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="c1">//r是用户输入的字符串</span>
+<span class="kd">var</span> <span class="nx">JTester</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">begin</span> <span class="o">=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">flags</span> <span class="o">=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\/([igm]{0,3})$/i</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">begin</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">end</span><span class="p">),</span> <span class="nx">flags</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
 
-<p>你可以在网络上的很多其他地方找到我，比如：</p>
+<p>如果有什么更好的想法也可以随时和我说，或者干脆Fork我在Github上创建的repo，给我pull request~。（<a href="https://github.com/zry656565/JRE-Parser">Github上项目的传送门</a>）</p>
 
-<ul>
-  <li><a href="https://github.com/zry656565">GitHub</a></li>
-  <li><a href="https://www.linkedin.com/profile/view?id=289040657">LinkedIn</a></li>
-  <li><a href="https://segmentfault.com/u/jerryzou">Segmentfault</a></li>
-  <li><a href="https://stackoverflow.com/users/3152296/jerryddg">Stackoverflow</a></li>
-  <li><a href="https://www.douban.com/people/jerry_zou/">Douban</a></li>
-  <li><a href="https://weibo.com/u/1943775181">Weibo</a></li>
-</ul>
+<p>最后附上这款测试工具的地址：<a href="http://zry656565.github.io/JRE-Parser/">http://zry656565.github.io/JRE-Parser/</a></p>
 
   </article>
+
+  
+  <p class="copyright">
+    本文的版权归作者 <a href="mailto:jerry.zry@outlook.com">邹润阳</a> 所有，采用 <a href="https://creativecommons.org/licenses/by-nc/3.0/">Attribution-NonCommercial 3.0 License</a>。任何人可以进行转载、分享，但不可在未经允许的情况下用于商业用途；转载请注明出处。感谢配合！
+  </p>
+  
 
   
     <div id="disqus_thread"></div>
@@ -141,8 +155,8 @@
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 var disqus_config = function () {
-this.page.url = "https://jerryzou.com/about/";  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = "10016"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = "https://jerryzou.com/posts/jreparser/";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "10007"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
@@ -154,8 +168,8 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                 
   
-
 </div>
+
         
       </div>
     </div>

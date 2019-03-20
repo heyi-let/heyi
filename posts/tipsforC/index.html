@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
         
-            关于我 | 咀嚼之味
+            C语言中可能被你忽视的小细节 | 咀嚼之味
         </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content=" 咀嚼之味是我分享我对编程与生活的见解之地。在我看来，编程不仅仅是我与生俱来的使命，也是我快乐的源泉。在业余时间，我喜欢研究一些跟技术相关的东西。同时，我也喜欢做一些安静的事，比如看书、看电影、听音乐、一个人散步以及旅行。
- ">
+    <meta name="description" content="在阅读C语言创造者Dennis M.Ritchie写的《C程序设计语言》时，我整理了一些简单的tips，希望对你们有些帮助。 ">
     <link rel="alternate" type="application/rss+xml" title="咀嚼之味 RSS" href="/feed.xml">
-    <link rel="canonical" href="https://jerryzou.com/about/">
+    <link rel="canonical" href="https://jerryzou.com/posts/tipsforC/">
     <link href="/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Custom CSS -->
@@ -104,34 +103,37 @@
         <div class="post">
 
   <header class="post-header">
-    <h1>关于我</h1>
+    <h1>C语言中可能被你忽视的小细节</h1>
+    <p class="meta">Nov 18, 2013 <span class="pause"> - </span>
+        浏览量：<span data-hk-page="current"> - </span>次<span class="pause"> | </span>
+        
+            
+                <a class="label" href="/all-articles/?label=C语言">C语言</a>
+            
+        
+    </p>
   </header>
 
   <article class="post-content">
-  <p><img class="monkey-avatar" src="https://jerryblog-image.b0.upaiyun.com/blog/monkey.jpg" /></p>
-
-<p>你们好，我是邹润阳，是一名生活在上海的程序员，同时梦想成为一名独立游戏开发者。</p>
-
-<p>我曾经在 <strong>Microsoft GBS、<a href="//dianying.taobao.com">淘票票</a> 和 <a href="//leetcode.com">LeetCode</a></strong> 担任前端实习生，毕业后有幸加入了 <strong><a href="//www.teambition.com">Teambition</a></strong>，全职开发 <a href="//thoughts.teambition.com">Thoughts</a>。目前我在 <strong><a href="//leetcode-cn.com">力扣</a></strong> 担任高级打杂工程师，欢迎任何能力出众的小伙伴<a href="//www.v2ex.com/t/491597">加入我们</a>。</p>
-
-<p>在我看来，编程不仅仅是我与生俱来的使命，也是我快乐的源泉。在业余时间，我喜欢研究一些跟技术相关的东西。同时，我也喜欢做一些安静的事，比如看书、看电影，或者独自散步。</p>
-
-<p>如果你有任何问题，请给我发送邮件：<a href="mailto:jerry.zry@outlook.com">jerry.zry@outlook.com</a></p>
-
-<h2 id="我在别处">我在别处</h2>
-
-<p>你可以在网络上的很多其他地方找到我，比如：</p>
-
-<ul>
-  <li><a href="https://github.com/zry656565">GitHub</a></li>
-  <li><a href="https://www.linkedin.com/profile/view?id=289040657">LinkedIn</a></li>
-  <li><a href="https://segmentfault.com/u/jerryzou">Segmentfault</a></li>
-  <li><a href="https://stackoverflow.com/users/3152296/jerryddg">Stackoverflow</a></li>
-  <li><a href="https://www.douban.com/people/jerry_zou/">Douban</a></li>
-  <li><a href="https://weibo.com/u/1943775181">Weibo</a></li>
-</ul>
+  <ol>
+  <li>EOF是文件结束符，它的值是-1.<br />
+因此用于接收getchar()的返回值的变量一般用int而不是char。</li>
+  <li>声明数组时，如int n[10]<br />
+方括号中的数字必须为常数，因为这是静态声明数组。<br />
+也有动态声明数组的方式，那会用到指针，这在后面讨论。</li>
+  <li>在C语言中，所有函数参数都是“通过值”传递的。（如果你真的想在函数中修改主调函数的变量，你可以传地址，其实也就是传指针，这个也是后话）</li>
+  <li>处理数组时一定要时刻注意边界值的处理（是否溢出）</li>
+  <li>变量和函数的extern声明通常写在头文件中。</li>
+  <li>如果函数没有参数，在声明该函数时需要使用void关键词显式声明，就像这样：<code>int func(void); </code>。因为ANSI C为了兼容老版本的C语言，把空参数表看成老版本的函数声明方式，而对参数表不做任何检查。</li>
+</ol>
 
   </article>
+
+  
+  <p class="copyright">
+    本文的版权归作者 <a href="mailto:jerry.zry@outlook.com">邹润阳</a> 所有，采用 <a href="https://creativecommons.org/licenses/by-nc/3.0/">Attribution-NonCommercial 3.0 License</a>。任何人可以进行转载、分享，但不可在未经允许的情况下用于商业用途；转载请注明出处。感谢配合！
+  </p>
+  
 
   
     <div id="disqus_thread"></div>
@@ -141,8 +143,8 @@
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 var disqus_config = function () {
-this.page.url = "https://jerryzou.com/about/";  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = "10016"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = "https://jerryzou.com/posts/tipsforC/";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "10002"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
@@ -154,8 +156,8 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                 
   
-
 </div>
+
         
       </div>
     </div>

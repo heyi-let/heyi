@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
         
-            关于我 | 咀嚼之味
+            搞清大数端小数端 | 咀嚼之味
         </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content=" 咀嚼之味是我分享我对编程与生活的见解之地。在我看来，编程不仅仅是我与生俱来的使命，也是我快乐的源泉。在业余时间，我喜欢研究一些跟技术相关的东西。同时，我也喜欢做一些安静的事，比如看书、看电影、听音乐、一个人散步以及旅行。
- ">
+    <meta name="description" content="我们日常生活中常见的IA-32位体系架构一般都是小数端存储方法。而IA-64则同时采用大数端和小数端的存储方法。究竟什么是大数端，什么是小数端呢？就让我们从这篇文章中了解一下吧。 ">
     <link rel="alternate" type="application/rss+xml" title="咀嚼之味 RSS" href="/feed.xml">
-    <link rel="canonical" href="https://jerryzou.com/about/">
+    <link rel="canonical" href="https://jerryzou.com/posts/storageMethod/">
     <link href="/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Custom CSS -->
@@ -104,34 +103,62 @@
         <div class="post">
 
   <header class="post-header">
-    <h1>关于我</h1>
+    <h1>搞清大数端小数端</h1>
+    <p class="meta">Nov 4, 2013 <span class="pause"> - </span>
+        浏览量：<span data-hk-page="current"> - </span>次<span class="pause"> | </span>
+        
+            
+                <a class="label" href="/all-articles/?label=系统底层">系统底层</a>
+            
+        
+    </p>
   </header>
 
   <article class="post-content">
-  <p><img class="monkey-avatar" src="https://jerryblog-image.b0.upaiyun.com/blog/monkey.jpg" /></p>
-
-<p>你们好，我是邹润阳，是一名生活在上海的程序员，同时梦想成为一名独立游戏开发者。</p>
-
-<p>我曾经在 <strong>Microsoft GBS、<a href="//dianying.taobao.com">淘票票</a> 和 <a href="//leetcode.com">LeetCode</a></strong> 担任前端实习生，毕业后有幸加入了 <strong><a href="//www.teambition.com">Teambition</a></strong>，全职开发 <a href="//thoughts.teambition.com">Thoughts</a>。目前我在 <strong><a href="//leetcode-cn.com">力扣</a></strong> 担任高级打杂工程师，欢迎任何能力出众的小伙伴<a href="//www.v2ex.com/t/491597">加入我们</a>。</p>
-
-<p>在我看来，编程不仅仅是我与生俱来的使命，也是我快乐的源泉。在业余时间，我喜欢研究一些跟技术相关的东西。同时，我也喜欢做一些安静的事，比如看书、看电影，或者独自散步。</p>
-
-<p>如果你有任何问题，请给我发送邮件：<a href="mailto:jerry.zry@outlook.com">jerry.zry@outlook.com</a></p>
-
-<h2 id="我在别处">我在别处</h2>
-
-<p>你可以在网络上的很多其他地方找到我，比如：</p>
+  <p>对于同样一个数0x123456。</p>
 
 <ul>
-  <li><a href="https://github.com/zry656565">GitHub</a></li>
-  <li><a href="https://www.linkedin.com/profile/view?id=289040657">LinkedIn</a></li>
-  <li><a href="https://segmentfault.com/u/jerryzou">Segmentfault</a></li>
-  <li><a href="https://stackoverflow.com/users/3152296/jerryddg">Stackoverflow</a></li>
-  <li><a href="https://www.douban.com/people/jerry_zou/">Douban</a></li>
-  <li><a href="https://weibo.com/u/1943775181">Weibo</a></li>
+  <li>大数端的存储方法是：
+    <table>
+      <tr><td width="60px">地址</td><td>值</td></tr>
+      <tr><td>0x00</td><td>0x12</td></tr>
+      <tr><td>0x01</td><td>0x34</td></tr>
+      <tr><td>0x02</td><td>0x56</td></tr>
+  </table>
+    <p><br />
+  <strong>大数端记忆方法：低地址存高（大）位</strong></p>
+  </li>
+  <li>而小数端的存储方法是：
+    <table>
+      <tr><td width="60px">地址</td><td>值</td></tr>
+      <tr><td>0x00</td><td>0x56</td></tr>
+      <tr><td>0x01</td><td>0x34</td></tr>
+      <tr><td>0x02</td><td>0x12</td></tr>
+  </table>
+    <p><br />
+  <strong>小数端记忆方法：低地址存低（小）</strong></p>
+  </li>
 </ul>
 
+<p>另外，</p>
+
+<ul>
+  <li>我们日常生活中常见的IA-32位体系架构一般都是小数端存储方法。</li>
+  <li>而IA-64则同时采用大数端和小数端的存储方法。</li>
+</ul>
+
+<p>但需要注意的是，现在很常见的家装64位的windows系统可不算真正的64位系统。真正的64位体系结构与32位体系结构完全不同，32位体系结构的程序在64位体系结构上的机器上根本运行不了。因为两者根本就使用了完全不同的指令集。<br />
+其实啊，家装的64位windows系统还是属于32位体系结构EM64T。而EM64T前面的E就是Extended的简称啦（即32位的扩展，实际上是48位系统）。</p>
+
+<p><strong>说明</strong>: 本文原发布于我的CSDN博客<a href="https://blog.csdn.net/zry656565">天上之海原</a>。</p>
+
   </article>
+
+  
+  <p class="copyright">
+    本文的版权归作者 <a href="mailto:jerry.zry@outlook.com">邹润阳</a> 所有，采用 <a href="https://creativecommons.org/licenses/by-nc/3.0/">Attribution-NonCommercial 3.0 License</a>。任何人可以进行转载、分享，但不可在未经允许的情况下用于商业用途；转载请注明出处。感谢配合！
+  </p>
+  
 
   
     <div id="disqus_thread"></div>
@@ -141,8 +168,8 @@
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 var disqus_config = function () {
-this.page.url = "https://jerryzou.com/about/";  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = "10016"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = "https://jerryzou.com/posts/storageMethod/";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "10001"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
@@ -154,8 +181,8 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                 
   
-
 </div>
+
         
       </div>
     </div>
