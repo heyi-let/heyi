@@ -1,332 +1,36 @@
-<!DOCTYPE html>
-<html>
+---
+title: heyi
+---
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>
-        
-            咀嚼之味
-        </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content=" 咀嚼之味是我分享我对编程与生活的见解之地。在我看来，编程不仅仅是我与生俱来的使命，也是我快乐的源泉。在业余时间，我喜欢研究一些跟技术相关的东西。同时，我也喜欢做一些安静的事，比如看书、看电影、听音乐、一个人散步以及旅行。
- ">
-    <link rel="alternate" type="application/rss+xml" title="咀嚼之味 RSS" href="/feed.xml">
-    <link rel="canonical" href="https://jerryzou.com/">
-    <link href="/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<style> 
+ul,li{ padding:0; margin:0;list-style:none} 
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/release/style.7785cd8c.css">
-
-    <!-- Baidu Analysis -->
-    <script>
-        if (window.location.href.substr(7, 9) !== 'localhost') {
-            var _hmt = _hmt || [];
-            (function() {
-                var hm = document.createElement("script");
-                hm.src = "//hm.baidu.com/hm.js?2744fd74aa568e064f9986394a60ead1";
-                var s = document.getElementsByTagName("script")[0]; 
-                s.parentNode.insertBefore(hm, s);
-            })();
-        }
-    </script>
-
-    <!-- Google Analytics -->
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-47842677-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
-    <!-- Hit Kounter LC -->
-    <script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
-    <script src="https://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.3.0.js"></script>
-    
-    <!-- handle external js files -->
-    <script src="/assets/js/lib/jquery/jquery-1.11.1.min.js"></script>
-</head>
+nav{border:1px solid #000; width:210px; overflow:hidden} 
+nav li{ line-height:22px;  padding:5px;} 
+nav li a:hover{ color:#F00} 
+/* 对class=nav设置黑色边框，鼠标滑过超链接文字为红色 */ 
 
 
-    <body>
+</style> 
 
-    <header class="site-header">
-  <div class="wrap">
-    <a class="site-title" href="/">咀嚼之味</a>
-    <nav class="site-nav">
-      <div class="menu-icon">
-        <img class="icon" src="https://jerryblog-image.b0.upaiyun.com/blog/menu.svg" title="More"/>
-      </div>
-      <div class="trigger">
-        <a class="page-link" href="/">首页</a>
-        
-          
-          <a class="page-link" href="/all-articles/">所有文章</a>
-          
-        
-          
-          <a class="page-link" href="/about/">关于我</a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          <a class="page-link" href="/feed.xml">RSS订阅</a>
-      </div>
-    </nav>
-  </div>
-  <!-- fork me on github -->
-  <a id="fork-me" href="https://github.com/zry656565/heaven-blog"><img src="https://jerryblog-image.b0.upaiyun.com/blog/forkme.png" alt="Fork me on GitHub"></a>
-</header>
+<nav>
+	导航：
+	<ul> 
+		<li><a href="{{ site.baseurl }}">首页</a></li> 
+		<li><a href="{{ site.baseurl }}/about/">Blog</a></li> 
+		<li><a href="{{ site.baseurl }}/contact/">关于我</a></li> 
+	</ul> 
+</nav>
 
 
-    <div class="page-content">
-      <div class="wrap">
-        
-        <div class="central-part">
-        <div class="home">
-  <ul class="posts">
-    
-      
-      <li>
-        <a class="post-link" href="/posts/rxjs-hooks/">像呼吸一样自然：React hooks + RxJS</a>
-        <p class="post-date">Posted on Nov 26, 2018 ;
-            浏览量: <span data-hk-page="https://jerryzou.com/posts/rxjs-hooks/"> - </span>次
-        	
-        	<a href="/all-articles/?label=RxJS"><span class="post-label">RxJS</span></a>
-        	
-        	<a href="/all-articles/?label=React"><span class="post-label">React</span></a>
-        	
-        	<a href="/all-articles/?label=react-hooks"><span class="post-label">react-hooks</span></a>
-        	
-        </p>
-        <p class="post-description">上个月的 React Conf 上，React 核心团队首次将 hooks 带到的公众们的眼前。起初我看到这样奇怪的东西，对它是很抗拒的。Dan 说 JavaScript 里的 this 太黑了，从其他语言转来写 React 的人会很不适应。然而 hooks 本质上也是一种黑魔法，需要理解它的本质依旧需要对 JS 的各种闭包和作用域的问题搞得很透彻才行。然而后来，跟 hooks 打了几天交道以后，我感觉这个想法还是挺有意思的。 <a class="post-link2" href="/posts/rxjs-hooks/">[继续阅读...]</a></p>
-      </li>
-      
-    
-      
-      <li>
-        <a class="post-link" href="/posts/10-questions-about-graphql/">阻碍你使用 GraphQL 的十个问题</a>
-        <p class="post-date">Posted on Feb 19, 2018 ;
-            浏览量: <span data-hk-page="https://jerryzou.com/posts/10-questions-about-graphql/"> - </span>次
-        	
-        	<a href="/all-articles/?label=GraphQL"><span class="post-label">GraphQL</span></a>
-        	
-        	<a href="/all-articles/?label=Apollo"><span class="post-label">Apollo</span></a>
-        	
-        	<a href="/all-articles/?label=Relay"><span class="post-label">Relay</span></a>
-        	
-        </p>
-        <p class="post-description">我在使用 GraphQL 的过程中经历了理解、误解、再理解的过程。作为吃了 GraphQL 这个螃蟹的人，希望能够通过这篇文章更好地帮助各位读者理解 GraphQL 是什么，GraphQL 会给你带来什么，以及将 GraphQL 应用于你的系统中需要注意哪些问题。这不是一篇系统的科普文，如果你有什么其他疑问可以评论中留言询问。 <a class="post-link2" href="/posts/10-questions-about-graphql/">[继续阅读...]</a></p>
-      </li>
-      
-    
-      
-      <li>
-        <a class="post-link" href="/posts/talk-about-premature-optimization/">浅谈前端中的过早优化问题</a>
-        <p class="post-date">Posted on Sep 25, 2017 ;
-            浏览量: <span data-hk-page="https://jerryzou.com/posts/talk-about-premature-optimization/"> - </span>次
-        	
-        	<a href="/all-articles/?label=前端开发"><span class="post-label">前端开发</span></a>
-        	
-        	<a href="/all-articles/?label=性能优化"><span class="post-label">性能优化</span></a>
-        	
-        </p>
-        <p class="post-description">过早优化是万恶之源。 —— Donald Knuth 还记得大四的软件优化课上，课的主题虽然是关于各种优化手段的，但老师讲的第一门课的 PPT 里依旧给这句话留了独立的一页。在近期的工作中，我就碰到了不少因为“过早优化”带来的麻烦。稍微整理了一下思绪，便有了这篇短文。 <a class="post-link2" href="/posts/talk-about-premature-optimization/">[继续阅读...]</a></p>
-      </li>
-      
-    
-      
-      <li>
-        <a class="post-link" href="/posts/rxjs-practice-01/">RxJS 实战篇（一）拖拽</a>
-        <p class="post-date">Posted on Jun 20, 2017 ;
-            浏览量: <span data-hk-page="https://jerryzou.com/posts/rxjs-practice-01/"> - </span>次
-        	
-        	<a href="/all-articles/?label=JavaScript"><span class="post-label">JavaScript</span></a>
-        	
-        	<a href="/all-articles/?label=RxJS"><span class="post-label">RxJS</span></a>
-        	
-        	<a href="/all-articles/?label=drag"><span class="post-label">drag</span></a>
-        	
-        </p>
-        <p class="post-description">很多人在接触到 RxJS 后会有一个共同的感觉：这个库虽然很强大，但奈何各种各样的 operators 太多了，在实际场景中根本不知道怎么运用！所以本文并不旨在阐释响应式编程的优越性，而是通过循序渐进的实例来展示 RxJS 常用 operators 的使用场景。 <a class="post-link2" href="/posts/rxjs-practice-01/">[继续阅读...]</a></p>
-      </li>
-      
-    
-      
-      <li>
-        <a class="post-link" href="/posts/vscode-debug-guide/">Visual Studio Code 前端调试不完全指南</a>
-        <p class="post-date">Posted on May 20, 2017 ;
-            浏览量: <span data-hk-page="https://jerryzou.com/posts/vscode-debug-guide/"> - </span>次
-        	
-        	<a href="/all-articles/?label=vscode"><span class="post-label">vscode</span></a>
-        	
-        	<a href="/all-articles/?label=debug"><span class="post-label">debug</span></a>
-        	
-        	<a href="/all-articles/?label=JavaScript"><span class="post-label">JavaScript</span></a>
-        	
-        </p>
-        <p class="post-description">Visual Studio Code (以下简称 vscode) 如今已经代替 Sublime，成为前端工程师们最喜爱的代码编辑器。它作为一个大型的开源项目，不断推陈出新；社区中涌现出大量优质的插件，以支持我们更加舒服地进行开发工作。在近期的工作中，我尝试通过 vscode 来提升调试代码的幸福度，积累了一点点小心得在此与大家分享一下 <a class="post-link2" href="/posts/vscode-debug-guide/">[继续阅读...]</a></p>
-      </li>
-      
-    
-      
-      <li>
-        <a class="post-link" href="/posts/introduction-to-hit-kounter-lc/">访问量统计工具 Hit Kounter v0.3</a>
-        <p class="post-date">Posted on Apr 23, 2016 ;
-            浏览量: <span data-hk-page="https://jerryzou.com/posts/introduction-to-hit-kounter-lc/"> - </span>次
-        	
-        	<a href="/all-articles/?label=博客"><span class="post-label">博客</span></a>
-        	
-        	<a href="/all-articles/?label=JavaScript"><span class="post-label">JavaScript</span></a>
-        	
-        </p>
-        <p class="post-description">Hit Kounter 是一个简单的访问量统计工具。据我从数据库里的数据目测，现在已经拥有了 9 位用户！不过我要对这九位用户说声抱歉啦。Hit Kounter 原本部署于 SAE 上，而近期 SAE 针对使用 MySQL 的应用开始收费。本项目只是一个本人使用业余时间开发的小工具；它本身包含的功能也很精简，并不适合使用付费服务。所以我已经将 Hit Kounter 服务迁移至 LeanCloud 上。原本部署在 SAE 上的服务预计在五一假期后下线，对已经使用 Hit Kounter 的一些用户，我再次表达我的歉意！使用方式上，目前 v0.3 版本相比于 v0.1 并没有什么改变… <a class="post-link2" href="/posts/introduction-to-hit-kounter-lc/">[继续阅读...]</a></p>
-      </li>
-      
-    
-      
-      <li>
-        <a class="post-link" href="/posts/record-and-playback-for-kinect/">Kinect 数据录制与回放</a>
-        <p class="post-date">Posted on Mar 21, 2016 ;
-            浏览量: <span data-hk-page="https://jerryzou.com/posts/record-and-playback-for-kinect/"> - </span>次
-        	
-        	<a href="/all-articles/?label=Kinect"><span class="post-label">Kinect</span></a>
-        	
-        	<a href="/all-articles/?label=C#"><span class="post-label">C#</span></a>
-        	
-        	<a href="/all-articles/?label=图像处理"><span class="post-label">图像处理</span></a>
-        	
-        </p>
-        <p class="post-description">最近在实验室用深度相机做一些三维重建的研究，主要的实验场景在宝山区的仓库。学校到仓库的来回车程大概有三四个小时，如果每次都要到实际场景中来测试算法，这真是着实令人头疼。所以我想着，如果能用 Kinect 把仓库中的场景录制下来，回来直接用录好的数据来测试算法，那不就不用来回跑了吗？ <a class="post-link2" href="/posts/record-and-playback-for-kinect/">[继续阅读...]</a></p>
-      </li>
-      
-    
-  </ul>
+<p>最新文章</p>
 
-  
-  <div class="pagination">
-    
-    <div class="parallelogram"><div>&laquo; Prev</div></div>
-    
+<ul>
 
-    
-      
-      <div class="parallelogram current"><div>1</div></div>
-      
-    
-      
-      <a class="parallelogram" href="/2/">
-        <div>2</div>
-      </a>
-      
-    
-      
-      <a class="parallelogram" href="/3/">
-        <div>3</div>
-      </a>
-      
-    
-      
-      <a class="parallelogram" href="/4/">
-        <div>4</div>
-      </a>
-      
-    
-      
-      <a class="parallelogram" href="/5/">
-        <div>5</div>
-      </a>
-      
-    
-      
-      <a class="parallelogram" href="/6/">
-        <div>6</div>
-      </a>
-      
-    
+	{% for post in site.posts %}
 
-    
-    <a class="parallelogram" href="/2/">
-        <div>Next &raquo;</div>
-    </a>
-    
-  </div>
-  
-</div>
-        </div>
+		<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 
-        <div class="side-part">
-          <div class="intro">
-    <h4>站长</h4>
-    <hr/>
-    <p>
-        <img class="avatar" src="https://jerryblog-image.b0.upaiyun.com/blog/monkey.jpg"/>
-        我是邹润阳，曾用或现用的网名有 zry656565、Jerry Zou、蛋蛋哥。欢迎大家来到我的博客。<br/>
-        本站总计访问量 <span data-hk-site>-</span> 次。
-    </p>
+	{% endfor %}
 
-</div>
-
-<!-- other sites -->
-<div class="other-sites">
-    <h4>我在别处</h4>
-    <hr/>
-    <p>你可以在许多其他地方找到我：</p>
-    <a href="https://github.com/zry656565"><img class="icon" src="https://jerryblog-image.b0.upaiyun.com/blog/github_icon.png" title="Github"/></a>
-    <a href="https://weibo.com/u/1943775181"><img class="icon" src="https://jerryblog-image.b0.upaiyun.com/blog/weibo_icon.png" title="微博" /></a>
-    <a href="https://www.zhihu.com/people/jerryddg"><img class="icon" src="https://jerryblog-image.b0.upaiyun.com/blog/zhihu_icon.png" title="知乎" /></a>
-    <a href="https://www.douban.com/people/jerry_zou/"><img class="icon" src="https://jerryblog-image.b0.upaiyun.com/blog/douban_icon.png" title="豆瓣" /></a>
-    <a href="https://segmentfault.com/u/jerryzou"><img class="icon" src="https://jerryblog-image.b0.upaiyun.com/blog/sf_icon.png" title="segmentfault" /></a>
-    <a href="https://www.linkedin.com/in/jerryzou-dd/"><img class="icon" src="https://jerryblog-image.b0.upaiyun.com/blog/linkedin_icon.png" title="Linkedin" /></a>
-</div>
-<!-- end -->
-
-<!--
-<div>
-    <h4 id="latest-comments">最新评论</h4>
-</div>
--->
-        </div>
-        
-      </div>
-    </div>
-
-    <footer class="site-footer">
-    <div class="wrap">
-        <ul class="friend-links footer-text">
-            <li><a href="//blog.liqiang.me/">Jayce Li</a></li>
-            <li><a href="//zhangwenli.com/">羡辙</a></li>
-            <li><a href="//xidui.github.io/">xidui</a></li>
-            <li><a href="//www.dozer.cc/">Dozer</a></li>
-            <li><a href="//leuisken.github.io/">LeuisKen</a></li>
-            <li><a href="//szhshp.org">szhshp</a></li>
-            <li><a href="//dianying.taobao.com">淘宝电影</a></li>
-            <li><a href="//leetcode.com">LeetCode</a></li>
-            <li><a href="//efe.baidu.com/">Baidu EFE</a></li>
-            <li><a href="//fex.baidu.com/">Baidu FEX</a></li>
-        </ul>
-        <p class="footer-text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> , <a href="https://pages.github.com/">Github Pages</a> and <a href="https://www.upyun.com/">UPYUN</a>.</p>
-    </div>
-</footer>
-
-    </body>
-</html>
+</ul>
