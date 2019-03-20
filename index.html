@@ -3,6 +3,8 @@ layout: default
 title: 我的Blog
 ---
 
+{% include header.ext %}
+
 <h2>{{ page.title }}</h2>
 
 <p>最新文章</p>
@@ -16,3 +18,5 @@ title: 我的Blog
 	{% endfor %}
 
 </ul>
+
+{% include footer.ext %}
